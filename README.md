@@ -17,6 +17,8 @@ Pushing to `main` runs `.github/workflows/deploy.yml`, which builds the site and
 
 One-time setup on GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
+**Fallback (no Actions):** run `npm run publish:pages`. It builds the site and commits it to the local `gh-pages` branch. Push that branch, and set **Settings → Pages → Source: Deploy from a branch → `gh-pages` / (root)**.
+
 The build also writes `dist/404.html` (a copy of `index.html`) so deep links such as `/a-level` or `/extras/some-post` work on GitHub Pages.
 
 ## Where to edit content
