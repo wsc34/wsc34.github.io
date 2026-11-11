@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#F2F3F1"/>
+  <g stroke="#DEDFDA" stroke-width="1"><path d="M200 200H1400M200 330H1400M200 460H1400M200 590H1400M200 720H1400"/></g>
+  <g stroke="#DEDFDA"><path d="M350 200V720M500 200V720M650 200V720M800 200V720M950 200V720M1100 200V720M1250 200V720"/></g>
+  <path d="M200 640C280 650 320 660 380 630S470 560 540 500 640 360 720 320 860 260 940 300 1060 400 1140 470 1300 560 1400 590" stroke="#3B5578" stroke-width="3" fill="none"/>
+  <path d="M200 640C280 650 320 660 380 630S470 560 540 500 640 360 720 320 860 260 940 300 1060 400 1140 470 1300 560 1400 590V720H200Z" fill="#3B5578" opacity=".07"/>
+  <g fill="#FAFAF8" stroke="#3B5578" stroke-width="2.5">
+    <circle cx="540" cy="500" r="7"/><circle cx="720" cy="320" r="7"/><circle cx="940" cy="300" r="7"/><circle cx="1140" cy="470" r="7"/>
+  </g>
+  <path d="M200 720H1400" stroke="#171717" stroke-width="1.5"/>
+  <g font-family="IBM Plex Mono, ui-monospace, monospace" font-size="18" fill="#737373">
+    <text x="200" y="760">00:00</text><text x="650" y="760">06:00</text><text x="1100" y="760">12:00</text><text x="1400" y="760" text-anchor="end">18:00</text>
+    <text x="200" y="160" fill="#171717" font-size="22">temp °C · sensor_01.csv</text>
+    <text x="940" y="275" text-anchor="middle" fill="#3B5578">21.4</text>
+  </g>
+</svg>

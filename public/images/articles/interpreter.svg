@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#F3F2EE"/>
+  <text x="120" y="150" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="34" fill="#171717">2 * (3 + 4)</text>
+  <g font-family="IBM Plex Mono, ui-monospace, monospace" font-size="18" fill="#737373">
+    <rect x="120" y="190" width="56" height="40" stroke="#C9C8C2" fill="#FAFAF8"/><text x="148" y="216" text-anchor="middle">2</text>
+    <rect x="186" y="190" width="56" height="40" stroke="#C9C8C2" fill="#FAFAF8"/><text x="214" y="216" text-anchor="middle">*</text>
+    <rect x="252" y="190" width="56" height="40" stroke="#C9C8C2" fill="#FAFAF8"/><text x="280" y="216" text-anchor="middle">(</text>
+    <rect x="318" y="190" width="56" height="40" stroke="#C9C8C2" fill="#FAFAF8"/><text x="346" y="216" text-anchor="middle">3</text>
+    <rect x="384" y="190" width="56" height="40" stroke="#C9C8C2" fill="#FAFAF8"/><text x="412" y="216" text-anchor="middle">+</text>
+    <rect x="450" y="190" width="56" height="40" stroke="#C9C8C2" fill="#FAFAF8"/><text x="478" y="216" text-anchor="middle">4</text>
+    <rect x="516" y="190" width="56" height="40" stroke="#C9C8C2" fill="#FAFAF8"/><text x="544" y="216" text-anchor="middle">)</text>
+  </g>
+  <g stroke="#171717" stroke-width="1.8">
+    <path d="M1000 260L820 470M1000 260L1180 470M1180 470L1060 680M1180 470L1300 680"/>
+  </g>
+  <g stroke="#171717" stroke-width="2" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="30" text-anchor="middle">
+    <circle cx="1000" cy="260" r="48" fill="#171717"/>
+    <circle cx="820" cy="470" r="48" fill="#FAFAF8"/>
+    <circle cx="1180" cy="470" r="48" fill="#3B5578" stroke="#3B5578"/>
+    <circle cx="1060" cy="680" r="48" fill="#FAFAF8"/>
+    <circle cx="1300" cy="680" r="48" fill="#FAFAF8"/>
+  </g>
+  <g font-family="IBM Plex Mono, ui-monospace, monospace" font-size="30" text-anchor="middle">
+    <text x="1000" y="270" fill="#FAFAF8">*</text><text x="820" y="480" fill="#171717">2</text><text x="1180" y="480" fill="#FAFAF8">+</text><text x="1060" y="690" fill="#171717">3</text><text x="1300" y="690" fill="#171717">4</text>
+  </g>
+  <g font-family="IBM Plex Mono, ui-monospace, monospace" font-size="20" fill="#737373">
+    <text x="120" y="290">tokens</text><text x="1000" y="810" text-anchor="middle">parse tree</text>
+    <text x="120" y="780" fill="#171717">=&gt; 14</text>
+  </g>
+</svg>
