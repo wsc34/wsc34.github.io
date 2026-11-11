@@ -72,6 +72,8 @@ export interface Topic {
    * the topic's resource page shows a button to open it.
    */
   documentUrl?: string
+  /** Button text for `documentUrl`. Defaults to "Open resource". */
+  documentLabel?: string
 }
 
 export interface TopicGroup {

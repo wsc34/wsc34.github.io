@@ -60,6 +60,18 @@ topic('4.1', 'Fundamentals of programming', 'Optional short description', {
 
 Each article is one object: `slug`, `title`, `excerpt`, `category`, `date` (`'YYYY-MM-DD'`), `image`, `imageAlt`, optional `featured: true`, and a Markdown `body`. The URL is `/{collection}/{slug}`.
 
+## 9618 Pseudocode IDE
+
+The pseudocode IDE is a separate app (Svelte + Pyodide), built in its own project and copied here as a finished build. It lives at `public/caie_pseudocode/` and is served at https://wsc34.github.io/caie_pseudocode/. The *Pseudocode* topic under CAIE 9618 links to it.
+
+To update it after changing the IDE:
+
+1. In the IDE project, run `npm run build`.
+2. Replace the contents of `public/caie_pseudocode/` with the IDE's `dist/` folder (keep `input-sw.js` next to `index.html`).
+3. Publish as usual.
+
+Keep it as its own page rather than inside a React route: its styles, service worker and full-screen layout are designed to own the whole window.
+
 ## Structure
 
 ```

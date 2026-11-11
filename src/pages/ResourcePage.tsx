@@ -48,7 +48,7 @@ export function ResourcePage() {
           rel="noopener noreferrer"
           className="mt-8 inline-flex h-11 items-center gap-2 rounded-md bg-ink px-5 text-[14px] font-medium text-paper transition-colors hover:bg-accent-strong"
         >
-          Open resource
+          {topic.documentLabel ?? 'Open resource'}
           <ExternalLink aria-hidden="true" className="h-4 w-4" />
         </a>
       )}
