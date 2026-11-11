@@ -1,8 +1,9 @@
 import { useState } from 'react'
 
 interface ArticleImageProps {
-  src: string
-  alt: string
+  /** Leave empty to show the blank placeholder. */
+  src?: string
+  alt?: string
   /** Tailwind aspect class, e.g. 'aspect-[16/9]'. */
   aspect?: string
   className?: string
@@ -10,13 +11,13 @@ interface ArticleImageProps {
 }
 
 /** Fixed-aspect image with a soft hover zoom and a neutral fallback. */
-export function ArticleImage({ src, alt, aspect = 'aspect-[16/9]', className = '', eager }: ArticleImageProps) {
+export function ArticleImage({ src, alt = '', aspect = 'aspect-[16/9]', className = '', eager }: ArticleImageProps) {
   const [loaded, setLoaded] = useState(false)
   const [failed, setFailed] = useState(false)
 
   return (
     <div className={`relative overflow-hidden rounded-md border border-line bg-wash ${aspect} ${className}`}>
-      {!failed ? (
+      {src && !failed ? (
         <img
           src={src}
           alt={alt}
@@ -29,8 +30,8 @@ export function ArticleImage({ src, alt, aspect = 'aspect-[16/9]', className = '
           }`}
         />
       ) : (
-        <div role="img" aria-label={alt} className="absolute inset-0 flex items-center justify-center">
-          <span className="font-mono text-[12px] text-faint">image unavailable</span>
+        <div aria-hidden="true" className="absolute inset-0 flex items-center justify-center">
+          <span className="font-mono text-[12px] text-faint">{src ? 'image unavailable' : 'image to be added'}</span>
         </div>
       )}
     </div>

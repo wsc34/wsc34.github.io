@@ -50,10 +50,9 @@ export const work: WorkEntry[] = [
 
 export const skills: SkillCategory[] = [
   { name: 'Programming Languages', items: ['Python','C'] },
-  { name: 'Frameworks & Technologies', items: [] },
-  { name: 'Tools', items: [] },
-  { name: 'Teaching & Professional', items: [] },
-  { name: 'Other', items: [] },
+  { name: 'Tools', items: ['AI?'] },
+  { name: 'Teaching & Professional', items: ['AQA 7517', 'CAIE 9618', 'Edexcel 1CP2'] },
+  { name: 'Other', items: ['I will definitely find something to fill it in'] },
 ]
 
 export const contactLinks: ContactLink[] = [

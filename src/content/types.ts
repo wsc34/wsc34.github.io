@@ -5,20 +5,20 @@
 /* ---------- Portfolio ---------- */
 
 export interface Profile {
-  /** Your full name, shown large in the hero. */
+  /** Full name, shown large in the hero. */
   name: string
-  /** A short professional title, e.g. "Computer Science Teacher & Developer". */
+  /** A short professional title */
   title: string
   /** One or two sentences shown under the name. */
   intro: string
   /** Optional line such as a city or "Based in London". Leave '' to hide. */
   location: string
   /**
-   * Path to your profile photo. Put the image in /public/images and set e.g.
+   * Put the image in /public/images and set e.g.
    * '/images/profile.jpg'. Leave '' to show the neutral placeholder.
    */
   photo: string
-  /** Alt text for the photo (describe it briefly). */
+  /** Alt text for the photo . */
   photoAlt: string
   /** Paragraphs for the "About me" section. */
   about: string[]
@@ -126,7 +126,7 @@ export interface CurriculumPageContent {
 
 /* ---------- Articles ---------- */
 
-export type ArticleCollection = 'super-curricular' | 'extras'
+export type ArticleCollection = 'personal' | 'super-curricular'
 
 export interface Article {
   collection: ArticleCollection
@@ -137,15 +137,15 @@ export interface Article {
   category?: string
   /** ISO date, e.g. '2026-09-14'. Leave undefined to hide. */
   date?: string
-  /** Image path, e.g. '/images/articles/binary-search.svg'. 16:9 works best. */
-  image: string
-  imageAlt: string
+  /** Image path, e.g. '/images/articles/my-post.jpg'. 16:9 works best. Leave out for a blank placeholder. */
+  image?: string
+  imageAlt?: string
   /** Show as the large featured article (first match wins). */
   featured?: boolean
   /** Estimated reading time in minutes (optional). */
   readingMinutes?: number
-  /** Article body written in Markdown. */
-  body: string
+  /** Article body written in Markdown. Leave out to show a "coming soon" notice. */
+  body?: string
 }
 
 export interface CollectionContent {

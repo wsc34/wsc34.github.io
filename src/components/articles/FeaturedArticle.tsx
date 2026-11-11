@@ -7,7 +7,7 @@ import { ArticleMeta } from './ArticleMeta'
 
 interface FeaturedArticleProps {
   article: Article
-  /** 'journal' = serif headline (Super-curricular), 'notebook' = sans (Extras). */
+  /** 'journal' = serif headline (Super-curricular), 'notebook' = sans (Personal). */
   tone?: 'journal' | 'notebook'
 }
 

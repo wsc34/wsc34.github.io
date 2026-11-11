@@ -3,7 +3,7 @@ import { ArrowLeft } from 'lucide-react'
 import { Link, useParams } from 'react-router'
 import { marked } from 'marked'
 import type { ArticleCollection } from '../content/types'
-import { articleHref, articlesByCollection, collections, findArticle } from '../content/articles'
+import { articleHref, collectionHref, articlesByCollection, collections, findArticle } from '../content/articles'
 import { ArticleImage } from '../components/articles/ArticleImage'
 import { ArticleMeta } from '../components/articles/ArticleMeta'
 import { NotFoundPage } from './NotFoundPage'
@@ -16,7 +16,8 @@ export function ArticlePage({ collection }: { collection: ArticleCollection }) {
   const meta = collections[collection]
   useDocumentTitle(article?.title ?? 'Article not found', article?.excerpt)
 
-  const html = useMemo(() => (article ? (marked.parse(article.body.trim(), { async: false }) as string) : ''), [article])
+  const body = article?.body?.trim() ?? ''
+  const html = useMemo(() => (body ? (marked.parse(body, { async: false }) as string) : ''), [body])
 
   if (!article) return <NotFoundPage />
 
@@ -29,7 +30,7 @@ export function ArticlePage({ collection }: { collection: ArticleCollection }) {
     <article className="container-site">
       <div className="mx-auto max-w-[720px] pt-10 md:pt-14">
         <Link
-          to={`/${collection}`}
+          to={collectionHref(collection)}
           className="group inline-flex items-center gap-1.5 font-mono text-[12.5px] text-muted transition-colors hover:text-ink"
         >
           <ArrowLeft aria-hidden="true" className="h-3.5 w-3.5 transition-transform duration-200 group-hover:-translate-x-0.5" />
@@ -56,7 +57,14 @@ export function ArticlePage({ collection }: { collection: ArticleCollection }) {
       </div>
 
       <div className="mx-auto max-w-[680px]">
-        <div className="prose-article mt-12 md:mt-16" dangerouslySetInnerHTML={{ __html: html }} />
+        {html ? (
+          <div className="prose-article mt-12 md:mt-16" dangerouslySetInnerHTML={{ __html: html }} />
+        ) : (
+          <div className="mt-12 rounded-md border border-dashed border-line-strong px-6 py-12 text-center md:mt-16">
+            <p className="eyebrow">Coming soon</p>
+            <p className="mt-3 text-[15px] text-muted">This article hasn't been written yet.</p>
+          </div>
+        )}
 
         <footer className="mt-16 border-t border-line pt-8">
           {next && next !== article && (
@@ -68,7 +76,7 @@ export function ArticlePage({ collection }: { collection: ArticleCollection }) {
             </Link>
           )}
           <Link
-            to={`/${collection}`}
+            to={collectionHref(collection)}
             className="mt-8 inline-flex items-center gap-1.5 text-[14px] font-medium text-muted transition-colors hover:text-ink"
           >
             <ArrowLeft aria-hidden="true" className="h-4 w-4" />

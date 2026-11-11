@@ -19,7 +19,7 @@ One-time setup on GitHub: **Settings → Pages → Build and deployment → Sour
 
 **Fallback (no Actions):** run `npm run publish:pages`. It builds the site and commits it to the local `gh-pages` branch. Push that branch, and set **Settings → Pages → Source: Deploy from a branch → `gh-pages` / (root)**.
 
-The build also writes `dist/404.html` (a copy of `index.html`) so deep links such as `/a-level` or `/extras/some-post` work on GitHub Pages.
+The build also writes `dist/404.html` (a copy of `index.html`) so deep links such as `/a-level` or `/personal/some-post` work on GitHub Pages.
 
 ## Where to edit content
 
@@ -39,7 +39,7 @@ Almost everything visible lives in `src/content/`. You should not need to touch 
 | Edexcel 1CP2 topics | `src/content/curriculum/edexcel-1cp2.ts` |
 | Page titles/intros, card order, Programming card | `src/content/curriculum/index.ts` |
 | Super-curricular articles | `src/content/articles/super-curricular.ts` |
-| Extras articles | `src/content/articles/extras.ts` |
+| Personal articles (home page) | `src/content/articles/personal.ts` |
 | Article images | `public/images/articles/` (16:9 works best) |
 | Nav tabs, footer line, site name | `src/content/site.ts` |
 

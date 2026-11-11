@@ -5,7 +5,7 @@ import { FeaturedArticle } from '../components/articles/FeaturedArticle'
 import { ArticleGrid } from '../components/articles/ArticleGrid'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
 
-/** Editorial landing page shared by Super-curricular and Extras. */
+/** Editorial landing page shared by Personal and Super-curricular. */
 export function CollectionPage({ collection }: { collection: ArticleCollection }) {
   const meta = collections[collection]
   useDocumentTitle(meta.title, meta.intro)

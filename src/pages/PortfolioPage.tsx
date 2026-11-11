@@ -8,7 +8,7 @@ import { TimelineEntry } from '../components/portfolio/TimelineEntry'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
 
 export function PortfolioPage() {
-  useDocumentTitle(undefined)
+  useDocumentTitle('Portfolio')
 
   return (
     <div className="container-site">
@@ -19,7 +19,7 @@ export function PortfolioPage() {
       >
         <div className="order-2 lg:order-1">
           <p className="eyebrow flex items-center gap-3">
-            <span className="text-accent">01</span>
+            <span className="text-accent">02</span>
             <span aria-hidden="true" className="h-px w-6 bg-line-strong" />
             <span>Portfolio</span>
           </p>
