@@ -13,43 +13,42 @@ import type {
 /* ================================================================== */
 
 export const profile: Profile = {
-  name: 'Your Name',
-  title: '[Your professional title]',
+  name: 'Wing Shing Chiu',
+  title: 'Teacher of Computer Science',
   intro:
-    '[One or two sentences introducing yourself: what you teach, build or study, and what you care about.]',
-  location: '[City, Country]',
+    'idk wt to write',
+  location: 'Tonbridge, United Kingdom',
   // e.g. '/images/profile.jpg' (place the file in /public/images)
   photo: '',
-  photoAlt: 'Portrait of Your Name',
+  photoAlt: 'Not done yet, meh',
   about: [
-    '[A short paragraph about your background: where you started, what drew you to Computer Science, and what you do now.]',
-    '[A second, optional paragraph about your interests, teaching approach or current projects.]',
+    'Was trying to do more gaming but somehow ended up doing Computer Science.',
+    'Now trying to mock about with AI and build some CS material.',
   ],
 }
 
 export const education: EducationEntry[] = [
   {
-    institution: '[Institution name]',
-    qualification: '[Qualification, e.g. degree or certificate]',
-    field: '[Field of study]',
-    dates: '[20XX — 20XX]',
-    description: '[Optional: dissertation, notable modules, awards.]',
+    institution: 'Kings College London',
+    qualification: 'PGCE',
+    field: 'Computing',
+    dates: 'Sep 2021 — July 2022',
   },
   {
-    institution: '[Institution name]',
-    qualification: '[Qualification]',
-    field: '[Field of study]',
-    dates: '[20XX — 20XX]',
+    institution: 'University of Cambridge',
+    qualification: 'BA',
+    field: 'Computer Science',
+    dates: 'Oct 2018 — July 2021',
   },
 ]
 
 export const work: WorkEntry[] = [
   {
-    organisation: '[Organisation]',
-    position: '[Position]',
-    start: '[Month 20XX]',
+    organisation: 'Tonbridge School',
+    position: 'Teacher of Computer Science',
+    start: 'Sep 2022',
     end: 'Present',
-    location: '[Location]',
+    location: 'Tonbridge',
     responsibilities: ['[Main responsibility]', '[Another responsibility]'],
     achievements: ['[A key achievement, ideally with a measurable outcome]'],
   },
