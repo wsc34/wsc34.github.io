@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#F1EEE6"/>
+  <g stroke="#171717" stroke-width="2">
+    <!-- large gear -->
+    <circle cx="560" cy="450" r="190"/>
+    <circle cx="560" cy="450" r="150"/>
+    <circle cx="560" cy="450" r="30"/>
+    <path d="M560 300V420M560 480V600M410 450H530M590 450H710M454 344L539 429M581 471L666 556M666 344L581 429M539 471L454 556"/>
+    <g stroke-width="14" stroke-linecap="butt">
+      <path d="M560 240V262M560 638V660M350 450H372M748 450H770M412 302L427 317M693 583L708 598M708 302L693 317M427 583L412 598"/>
+    </g>
+    <!-- small gear -->
+    <circle cx="870" cy="300" r="95"/>
+    <circle cx="870" cy="300" r="20"/>
+    <path d="M870 225V280M870 320V375M795 300H850M890 300H945"/>
+    <g stroke-width="12"><path d="M870 195V213M870 387V405M765 300H783M957 300H975"/></g>
+  </g>
+  <!-- punched cards -->
+  <g stroke="#171717" stroke-width="1.5">
+    <rect x="1040" y="420" width="380" height="120" fill="#FAFAF8"/>
+    <rect x="1060" y="560" width="380" height="120" fill="#FAFAF8"/>
+    <rect x="1080" y="700" width="380" height="120" fill="#FAFAF8" opacity=".6"/>
+  </g>
+  <g fill="#3B5578">
+    <circle cx="1080" cy="455" r="9"/><circle cx="1140" cy="455" r="9"/><circle cx="1260" cy="455" r="9"/><circle cx="1350" cy="455" r="9"/>
+    <circle cx="1110" cy="505" r="9"/><circle cx="1200" cy="505" r="9"/><circle cx="1290" cy="505" r="9"/><circle cx="1380" cy="505" r="9"/>
+    <circle cx="1100" cy="595" r="9"/><circle cx="1190" cy="595" r="9"/><circle cx="1310" cy="595" r="9"/>
+    <circle cx="1160" cy="645" r="9"/><circle cx="1250" cy="645" r="9"/><circle cx="1400" cy="645" r="9"/>
+  </g>
+  <text x="1040" y="390" font-family="IBM Plex Mono, ui-monospace, monospace" font-size="20" fill="#737373">store · mill · cards — 1837</text>
+</svg>
