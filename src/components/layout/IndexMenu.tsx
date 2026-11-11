@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, type MouseEvent } from 'react'
 import { ChevronRight } from 'lucide-react'
-import { Link, useLocation, useSearchParams } from 'react-router'
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router'
 import type { ArticleCollection, CurriculumBoard, CurriculumPageContent } from '../../content/types'
 import { aLevelPage, gcsePage, levelLabels, topicHref } from '../../content/curriculum'
 import { articleHref, articlesByCollection, collectionHref, collections } from '../../content/articles'
@@ -48,19 +48,30 @@ function itemClass(active: boolean) {
 /*  Index contents                                                    */
 /* ------------------------------------------------------------------ */
 
-function BoardIndex({ board }: { board: CurriculumBoard }) {
-  const { pathname } = useLocation()
-  const [params] = useSearchParams()
-  const levelPath = levelLabels[board.level].path
-  const boardPrefix = `/resources/${board.level}/${board.slug}/`
-  const containsActive = pathname.startsWith(boardPrefix)
-  const openInPage = pathname === levelPath && (params.get('open') ?? '').split(',').includes(board.slug)
-  const [open, setOpen] = useState(containsActive || openInPage)
+interface BoardIndexProps {
+  board: CurriculumBoard
+  open: boolean
+  /** Open this board (closing any other) or close it if already open. */
+  onToggle: () => void
+}
 
-  // Follow the page: expand when the reader moves into this board.
-  useEffect(() => {
-    if (containsActive || openInPage) setOpen(true)
-  }, [containsActive, openInPage])
+function BoardIndex({ board, open, onToggle }: BoardIndexProps) {
+  const { pathname } = useLocation()
+  const navigate = useNavigate()
+  const levelPath = levelLabels[board.level].path
+  const containsActive = pathname.startsWith(`/resources/${board.level}/${board.slug}/`)
+
+  // Title click: opening goes to the board on its tab page; clicking an open
+  // title again just collapses it (and closes the panel if we're on that page).
+  const onTitleClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    if (!open) {
+      onToggle()
+      return
+    }
+    e.preventDefault()
+    onToggle()
+    if (pathname === levelPath) navigate(levelPath, { replace: true, preventScrollReset: true })
+  }
 
   const listId = `index-${board.slug}`
   const showGroupTitles = board.groups.length > 1
@@ -73,13 +84,15 @@ function BoardIndex({ board }: { board: CurriculumBoard }) {
           aria-expanded={open}
           aria-controls={listId}
           aria-label={`${open ? 'Collapse' : 'Expand'} ${board.board} ${board.code} topics`}
-          onClick={() => setOpen((v) => !v)}
+          onClick={onToggle}
           className="-ml-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-sm text-faint transition-colors hover:bg-wash hover:text-ink"
         >
           <ChevronRight aria-hidden="true" className={`h-3.5 w-3.5 transition-transform duration-200 ${open ? 'rotate-90' : ''}`} />
         </button>
         <Link
           to={`${levelPath}?open=${board.slug}`}
+          onClick={onTitleClick}
+          aria-expanded={open}
           className={`text-[14px] font-semibold tracking-[-0.01em] transition-colors hover:text-accent ${containsActive ? 'text-ink' : 'text-ink-soft'}`}
         >
           {board.board} <span className="font-mono text-[12.5px] font-normal text-muted">{board.code}</span>
@@ -119,11 +132,32 @@ function BoardIndex({ board }: { board: CurriculumBoard }) {
 
 function CurriculumIndex({ content }: { content: CurriculumPageContent }) {
   const { pathname } = useLocation()
+  const [params] = useSearchParams()
+  const boards = content.entries.flatMap((e) => (e.kind === 'board' ? [e.board] : []))
+
+  // The board the page is currently showing: the one holding the open topic,
+  // or the first panel opened on the tab page (?open=…).
+  const levelPath = levelLabels[content.level].path
+  const fromTopic = boards.find((b) => pathname.startsWith(`/resources/${b.level}/${b.slug}/`))?.slug
+  const fromPage = pathname === levelPath ? (params.get('open') ?? '').split(',').find((s) => boards.some((b) => b.slug === s)) : undefined
+  const followSlug = fromTopic ?? fromPage ?? null
+
+  // Accordion: at most one board open in the index at a time.
+  const [openSlug, setOpenSlug] = useState<string | null>(followSlug)
+  useEffect(() => {
+    if (followSlug) setOpenSlug(followSlug)
+  }, [followSlug])
+
   return (
     <ul className="space-y-1.5">
       {content.entries.map((entry, i) =>
         entry.kind === 'board' ? (
-          <BoardIndex key={entry.board.slug} board={entry.board} />
+          <BoardIndex
+            key={entry.board.slug}
+            board={entry.board}
+            open={openSlug === entry.board.slug}
+            onToggle={() => setOpenSlug((cur) => (cur === entry.board.slug ? null : entry.board.slug))}
+          />
         ) : (
           <li key={i}>
             <Link
