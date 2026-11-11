@@ -2,24 +2,21 @@ import type { SkillCategory } from '../../content/types'
 
 export function SkillsSection({ categories }: { categories: SkillCategory[] }) {
   return (
-    <dl className="divide-y divide-line">
+    <dl className="space-y-4">
       {categories.map((cat) => (
-        <div key={cat.name} className="grid gap-3 py-4 first:pt-0 last:pb-0 sm:grid-cols-[190px_1fr] sm:gap-6">
-          <dt className="pt-1 text-[14px] font-medium text-ink">{cat.name}</dt>
-          <dd>
+        <div key={cat.name}>
+          <dt className="text-[13px] font-medium text-ink">{cat.name}</dt>
+          <dd className="mt-2">
             {cat.items.length > 0 ? (
-              <ul className="flex flex-wrap gap-2">
+              <ul className="flex flex-wrap gap-1.5">
                 {cat.items.map((item) => (
-                  <li
-                    key={item}
-                    className="rounded-sm border border-line-strong bg-card px-2.5 py-1 text-[13.5px] text-ink-soft"
-                  >
+                  <li key={item} className="rounded-sm border border-line-strong bg-card px-2 py-0.5 text-[13px] text-ink-soft">
                     {item}
                   </li>
                 ))}
               </ul>
             ) : (
-              <span className="inline-block rounded-sm border border-dashed border-line-strong px-2.5 py-1 font-mono text-[12px] text-faint">
+              <span className="inline-block rounded-sm border border-dashed border-line-strong px-2 py-0.5 font-mono text-[11.5px] text-faint">
                 to be added
               </span>
             )}

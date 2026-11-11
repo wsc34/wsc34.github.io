@@ -66,12 +66,12 @@ Each article is one object: `slug`, `title`, `excerpt`, `category`, `date` (`'YY
 src/
   content/          ← editable content (profile, curriculum, articles, site)
   components/
-    layout/         SiteLayout, SiteHeader, MainNavigation, SiteFooter
-    portfolio/      ProfileImage, CVSection, TimelineEntry, SkillsSection, ContactSection
+    layout/         SiteLayout, SiteHeader, MainNavigation, SiteFooter, SideColumn, IndexMenu
+    portfolio/      PortfolioColumn, ProfileImage, CVSection, TimelineEntry, SkillsSection, ContactSection
     curriculum/     CurriculumAccordion (card + panel), TopicLink, LinkCard
     articles/       FeaturedArticle, ArticleCard, ArticleGrid, ArticleImage, ArticleMeta
     ui/             PageHeader, PlaceholderPage
-  pages/            Portfolio, Curriculum, Collection, Article, Resource, PythonEmulator, NotFound
+  pages/            Curriculum, Collection, Article, Resource, PythonEmulator, NotFound
   router.tsx        all routes
   styles/index.css  design tokens, prose styles, motion
 ```

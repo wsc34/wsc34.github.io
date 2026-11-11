@@ -16,7 +16,7 @@ export function CollectionPage({ collection }: { collection: ArticleCollection }
   const tone = collection === 'super-curricular' ? 'journal' : 'notebook'
 
   return (
-    <div className="container-site">
+    <div className="w-full">
       <PageHeader index={meta.index} label={meta.title} title={meta.title} intro={meta.intro} />
 
       {!featured ? (

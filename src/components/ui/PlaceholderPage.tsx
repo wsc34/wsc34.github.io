@@ -21,7 +21,7 @@ interface PlaceholderPageProps {
 /** Polished holding page for routes whose content is not ready yet. */
 export function PlaceholderPage({ crumbs, eyebrow, title, description, status, back, children, aside }: PlaceholderPageProps) {
   return (
-    <div className="container-site">
+    <div className="w-full">
       <nav aria-label="Breadcrumb" className="pt-10 md:pt-14">
         <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 font-mono text-[12px] text-muted">
           {crumbs.map((c, i) => (
@@ -41,7 +41,7 @@ export function PlaceholderPage({ crumbs, eyebrow, title, description, status, b
         </ol>
       </nav>
 
-      <div className={`grid gap-12 pt-12 md:pt-16 ${aside ? 'lg:grid-cols-[1fr_400px] lg:gap-20' : ''}`}>
+      <div className={`grid gap-12 pt-12 md:pt-16 ${aside ? 'xl:grid-cols-[1fr_320px] xl:gap-14' : ''}`}>
         <div className="max-w-[640px]">
           <p className="eyebrow">{eyebrow}</p>
           <h1 className="mt-4 text-[34px] leading-[1.1] font-semibold tracking-[-0.03em] text-ink md:text-[46px]">{title}</h1>

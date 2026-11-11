@@ -16,7 +16,7 @@ import { edexcel1cp2 } from './edexcel-1cp2'
 
 export const aLevelPage: CurriculumPageContent = {
   level: 'a-level',
-  index: '03',
+  index: '02',
   title: 'A Level Computer Science',
   intro:
     'Topic-by-topic resources for the two A Level specifications, organised to follow the structure of each syllabus.',
@@ -29,7 +29,7 @@ export const aLevelPage: CurriculumPageContent = {
 
 export const gcsePage: CurriculumPageContent = {
   level: 'gcse',
-  index: '04',
+  index: '03',
   title: 'GCSE Computer Science',
   intro:
     'Clear, structured notes for every GCSE topic, plus a dedicated space for learning to program in Python.',

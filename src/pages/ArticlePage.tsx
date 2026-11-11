@@ -27,7 +27,7 @@ export function ArticlePage({ collection }: { collection: ArticleCollection }) {
   const journal = collection === 'super-curricular'
 
   return (
-    <article className="container-site">
+    <article className="w-full">
       <div className="mx-auto max-w-[720px] pt-10 md:pt-14">
         <Link
           to={collectionHref(collection)}

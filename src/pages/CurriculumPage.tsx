@@ -31,7 +31,7 @@ export function CurriculumPage({ content }: { content: CurriculumPageContent }) 
   }
 
   return (
-    <div className="container-site">
+    <div className="w-full">
       <PageHeader
         index={content.index}
         label={content.level === 'a-level' ? 'A Level' : 'GCSE'}

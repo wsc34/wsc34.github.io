@@ -13,7 +13,7 @@ export const collections: Record<ArticleCollection, CollectionContent> = {
   },
   'super-curricular': {
     collection: 'super-curricular',
-    index: '05',
+    index: '04',
     title: 'Super-curricular',
     intro:
       'Ideas, history and projects beyond the specification.',

@@ -73,7 +73,7 @@
 /* ------------------------------------------------------------------ */
 @utility container-site {
   width: 100%;
-  max-width: 1160px;
+  max-width: 1320px;
   margin-inline: auto;
   padding-inline: 20px;
   @media (width >= 48rem) {
@@ -117,6 +117,19 @@
 }
 .page-enter {
   animation: page-in 260ms var(--ease-out-soft) both;
+}
+
+/* Side column contents fade in while the column changes width. */
+@keyframes side-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.side-fade {
+  animation: side-in 320ms var(--ease-out-soft) 60ms both;
 }
 
 @keyframes caret-blink {

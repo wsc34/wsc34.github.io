@@ -7,23 +7,15 @@ interface CVSectionProps {
   children: ReactNode
 }
 
-/**
- * A CV section: numbered label in the left column, content on the right.
- * Collapses to a single column on small screens.
- */
+/** A CV section in the side column: numbered label above its content. */
 export function CVSection({ id, number, title, children }: CVSectionProps) {
   return (
-    <section
-      aria-labelledby={`${id}-title`}
-      className="grid gap-6 border-t border-line py-12 md:grid-cols-[220px_1fr] md:gap-10 md:py-14"
-    >
-      <div>
-        <p className="font-mono text-[12px] text-accent">{number}</p>
-        <h2 id={`${id}-title`} className="mt-1.5 text-[19px] font-semibold tracking-[-0.015em] text-ink">
-          {title}
-        </h2>
-      </div>
-      <div className="min-w-0">{children}</div>
+    <section aria-labelledby={`${id}-title`} className="border-t border-line py-7">
+      <p className="font-mono text-[11.5px] text-accent">{number}</p>
+      <h2 id={`${id}-title`} className="mt-1 scroll-mt-24 text-[15.5px] font-semibold tracking-[-0.01em] text-ink">
+        {title}
+      </h2>
+      <div className="mt-4 min-w-0">{children}</div>
     </section>
   )
 }

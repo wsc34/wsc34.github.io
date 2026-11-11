@@ -24,9 +24,9 @@ export function ProfileImage({ src, alt, name }: ProfileImageProps) {
   const showImage = Boolean(src) && !failed
 
   return (
-    <figure className="relative mx-auto aspect-square w-[200px] sm:w-[240px] lg:w-[300px]">
+    <figure className="relative aspect-square w-[104px] shrink-0">
       {/* Fine outer ring for a subtle, considered frame. */}
-      <div aria-hidden="true" className="absolute -inset-3 rounded-full border border-line" />
+      <div aria-hidden="true" className="absolute -inset-1.5 rounded-full border border-line" />
       <div className="relative h-full w-full overflow-hidden rounded-full border border-line-strong bg-wash">
         {showImage ? (
           <img
@@ -44,10 +44,9 @@ export function ProfileImage({ src, alt, name }: ProfileImageProps) {
             aria-label="Profile photo placeholder"
             className="flex h-full w-full flex-col items-center justify-center bg-[radial-gradient(circle_at_50%_38%,#ffffff_0%,#f3f3f0_70%)]"
           >
-            <span className="font-mono text-[44px] font-medium tracking-tight text-line-strong lg:text-[56px]">
+            <span className="font-mono text-[26px] font-medium tracking-tight text-line-strong">
               {initials(name) || '—'}
             </span>
-            <span className="mt-2 font-mono text-[11px] tracking-[0.08em] text-faint uppercase">Photo</span>
           </div>
         )}
       </div>

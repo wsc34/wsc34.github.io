@@ -1,6 +1,5 @@
 import { createBrowserRouter, Navigate } from 'react-router'
 import { SiteLayout } from './components/layout/SiteLayout'
-import { PortfolioPage } from './pages/PortfolioPage'
 import { CurriculumPage } from './pages/CurriculumPage'
 import { CollectionPage } from './pages/CollectionPage'
 import { ArticlePage } from './pages/ArticlePage'
@@ -17,7 +16,7 @@ export const router = createBrowserRouter([
       { path: 'personal', element: <Navigate to="/" replace /> },
       { path: 'personal/:slug', element: <ArticlePage collection="personal" /> },
       { path: 'extras/*', element: <Navigate to="/" replace /> },
-      { path: 'portfolio', element: <PortfolioPage /> },
+      { path: 'portfolio', element: <Navigate to="/" replace /> },
       { path: 'a-level', element: <CurriculumPage content={aLevelPage} /> },
       { path: 'gcse', element: <CurriculumPage content={gcsePage} /> },
       { path: 'resources/:level/:board/:topic', element: <ResourcePage /> },
