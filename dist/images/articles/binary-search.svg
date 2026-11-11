@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#EFEEE9"/>
+  <g stroke="#D9D8D2" stroke-width="1"><path d="M0 150H1600M0 300H1600M0 450H1600M0 600H1600M0 750H1600"/></g>
+  <!-- 16 cells -->
+  <g font-family="IBM Plex Mono, ui-monospace, monospace" font-size="22" text-anchor="middle">
+    <g stroke="#171717" stroke-width="1.5">
+      <rect x="160" y="190" width="80" height="80" fill="#FAFAF8"/><rect x="240" y="190" width="80" height="80" fill="#FAFAF8"/><rect x="320" y="190" width="80" height="80" fill="#FAFAF8"/><rect x="400" y="190" width="80" height="80" fill="#FAFAF8"/>
+      <rect x="480" y="190" width="80" height="80" fill="#FAFAF8"/><rect x="560" y="190" width="80" height="80" fill="#FAFAF8"/><rect x="640" y="190" width="80" height="80" fill="#FAFAF8"/><rect x="720" y="190" width="80" height="80" fill="#FAFAF8"/>
+      <rect x="800" y="190" width="80" height="80" fill="#3B5578"/><rect x="880" y="190" width="80" height="80" fill="#FAFAF8"/><rect x="960" y="190" width="80" height="80" fill="#FAFAF8"/><rect x="1040" y="190" width="80" height="80" fill="#FAFAF8"/>
+      <rect x="1120" y="190" width="80" height="80" fill="#FAFAF8"/><rect x="1200" y="190" width="80" height="80" fill="#FAFAF8"/><rect x="1280" y="190" width="80" height="80" fill="#FAFAF8"/><rect x="1360" y="190" width="80" height="80" fill="#FAFAF8"/>
+    </g>
+    <g fill="#171717">
+      <text x="200" y="238">2</text><text x="280" y="238">5</text><text x="360" y="238">8</text><text x="440" y="238">12</text><text x="520" y="238">16</text><text x="600" y="238">23</text><text x="680" y="238">38</text><text x="760" y="238">41</text>
+      <text x="840" y="238" fill="#FAFAF8">56</text><text x="920" y="238">63</text><text x="1000" y="238">72</text><text x="1080" y="238">80</text><text x="1160" y="238">85</text><text x="1240" y="238">91</text><text x="1320" y="238">94</text><text x="1400" y="238">99</text>
+    </g>
+  </g>
+  <!-- halving brackets -->
+  <g stroke="#171717" stroke-width="1.5" fill="none">
+    <path d="M160 330V350H1440V330"/>
+    <path d="M800 470V490H1440V470" stroke="#3B5578"/>
+    <path d="M800 610V630H1120V610" stroke="#3B5578" opacity=".8"/>
+    <path d="M800 750V770H960V750" stroke="#3B5578" opacity=".6"/>
+  </g>
+  <g fill="#3B5578"><circle cx="800" cy="350" r="6"/><circle cx="1120" cy="490" r="6"/><circle cx="960" cy="630" r="6"/><circle cx="880" cy="770" r="6"/></g>
+  <g font-family="IBM Plex Mono, ui-monospace, monospace" font-size="20" fill="#737373">
+    <text x="160" y="395">n = 16</text><text x="800" y="535">n = 8</text><text x="800" y="675">n = 4</text><text x="800" y="815">n = 2</text>
+    <text x="1440" y="815" text-anchor="end" fill="#171717">O(log n)</text>
+  </g>
+</svg>

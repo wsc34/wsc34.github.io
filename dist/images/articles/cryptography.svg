@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <rect width="1600" height="900" fill="#E9ECF0"/>
+  <g font-family="IBM Plex Mono, ui-monospace, monospace" font-size="18" fill="#B4BDC9" letter-spacing="6">
+    <text x="60" y="90">7F 3A 9C 01 E4 5B 22 D8 6E 0F A1 93 4C 77 B2 18 5D C0 E9 34 8A 6F 12 BB 47 D3 90 2E</text>
+    <text x="60" y="830">A1 93 4C 77 B2 18 5D C0 E9 34 8A 6F 12 BB 47 D3 90 2E 7F 3A 9C 01 E4 5B 22 D8 6E 0F</text>
+  </g>
+  <!-- public padlock -->
+  <g stroke="#171717" stroke-width="2" fill="none">
+    <path d="M520 420V340a120 120 0 0 1 240 0v80"/>
+    <rect x="460" y="420" width="360" height="280" rx="10" fill="#FAFAF8"/>
+    <circle cx="640" cy="540" r="26"/>
+    <path d="M640 566v60"/>
+  </g>
+  <!-- private key -->
+  <g stroke="#3B5578" stroke-width="2.5" fill="none">
+    <circle cx="1040" cy="520" r="70" fill="#FAFAF8"/>
+    <circle cx="1040" cy="520" r="28"/>
+    <path d="M1110 520H1300V580M1250 520V565"/>
+  </g>
+  <path d="M840 560H950" stroke="#171717" stroke-width="1.5" stroke-dasharray="6 8"/>
+  <g font-family="IBM Plex Mono, ui-monospace, monospace" font-size="20">
+    <text x="460" y="745" fill="#737373">public key</text>
+    <text x="970" y="640" fill="#3B5578">private key</text>
+    <text x="1000" y="380" fill="#171717">c = m^e mod n</text>
+  </g>
+</svg>
