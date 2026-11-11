@@ -6,19 +6,13 @@ import type {
   WorkEntry,
 } from './types'
 
-/* ================================================================== */
-/*  PORTFOLIO CONTENT                                                  */
-/*  Everything on the Portfolio tab comes from this file.              */
-/*  Replace the bracketed placeholder text with your own details.      */
-/* ================================================================== */
-
 export const profile: Profile = {
   name: 'Wing Shing Chiu',
   title: 'Teacher of Computer Science',
   intro:
     'idk wt to write',
   location: 'Tonbridge, United Kingdom',
-  // e.g. '/images/profile.jpg' (place the file in /public/images)
+  // e.g. '/images/profile.jpg' (location: /public/images)
   photo: '',
   photoAlt: 'Not done yet, meh',
   about: [
@@ -49,35 +43,24 @@ export const work: WorkEntry[] = [
     start: 'Sep 2022',
     end: 'Present',
     location: 'Tonbridge',
-    responsibilities: ['[Main responsibility]', '[Another responsibility]'],
-    achievements: ['[A key achievement, ideally with a measurable outcome]'],
-  },
-  {
-    organisation: '[Organisation]',
-    position: '[Position]',
-    start: '[Month 20XX]',
-    end: '[Month 20XX]',
-    location: '[Location]',
-    responsibilities: ['[Main responsibility]'],
-    achievements: [],
+    responsibilities: ['Deliver lessons (A Level and GCSE Computer Science)', 'Create CS related teaching and learning material'],
+    achievements: ['Does living a happy life count?'],
   },
 ]
 
-/** Leave `items` empty to show a quiet "to be added" placeholder. */
 export const skills: SkillCategory[] = [
-  { name: 'Programming Languages', items: [] },
+  { name: 'Programming Languages', items: ['Python','C'] },
   { name: 'Frameworks & Technologies', items: [] },
   { name: 'Tools', items: [] },
   { name: 'Teaching & Professional', items: [] },
   { name: 'Other', items: [] },
 ]
 
-/** Leave `href` empty for anything you have not added yet. */
 export const contactLinks: ContactLink[] = [
-  { label: 'Email', value: 'Not yet added', href: '' },
-  { label: 'GitHub', value: 'Not yet added', href: '' },
-  { label: 'LinkedIn', value: 'Not yet added', href: '' },
-  { label: 'Website', value: 'Not yet added', href: '' },
+  { label: 'Email', value: 'email', href: '' },
+  { label: 'GitHub', value: 'wsc34', href: 'https://github.com/wsc34' },
+  { label: 'LinkedIn', value: 'wsc34', href: 'https://www.linkedin.com/in/wsc34' },
+  { label: 'Website', value: 'this', href: 'https://wsc34.github.io/' },
 ]
 
 /**
