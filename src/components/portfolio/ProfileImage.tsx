@@ -42,7 +42,7 @@ export function ProfileImage({ src, alt, name }: ProfileImageProps) {
           <div
             role="img"
             aria-label="Profile photo placeholder"
-            className="flex h-full w-full flex-col items-center justify-center bg-[radial-gradient(circle_at_50%_38%,#ffffff_0%,#f3f3f0_70%)]"
+            className="flex h-full w-full flex-col items-center justify-center bg-[radial-gradient(circle_at_50%_38%,var(--color-card)_0%,var(--color-wash)_70%)]"
           >
             <span className="font-mono text-[26px] font-medium tracking-tight text-line-strong">
               {initials(name) || '—'}

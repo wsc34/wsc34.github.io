@@ -8,7 +8,15 @@
       name="description"
       content="wsc34 — a personal portfolio and a curated library of A Level, GCSE and super-curricular Computer Science resources."
     />
-    <meta name="theme-color" content="#FAFAF8" />
+    <meta name="theme-color" content="#FAFAF8" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#141413" media="(prefers-color-scheme: dark)" />
+    <!-- Apply a saved light/dark choice before the page paints (avoids a flash). -->
+    <script>
+      try {
+        var t = localStorage.getItem('wsc34.theme')
+        if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t
+      } catch (e) {}
+    </script>
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="wsc34" />
     <meta property="og:title" content="wsc34 — Portfolio & Computer Science Resources" />

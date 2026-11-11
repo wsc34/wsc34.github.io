@@ -26,7 +26,7 @@ export function PythonEmulatorPage() {
       aside={
         <div
           aria-hidden="true"
-          className="self-start overflow-hidden rounded-lg border border-night bg-night shadow-[0_20px_50px_-28px_rgba(23,23,23,0.6)]"
+          className="self-start overflow-hidden rounded-lg border border-night-edge bg-night shadow-[0_20px_50px_-28px_rgba(23,23,23,0.6)]"
         >
           <div className="flex items-center gap-1.5 border-b border-[#262626] px-4 py-3">
             <span className="h-2.5 w-2.5 rounded-full bg-[#333]" />
@@ -35,7 +35,7 @@ export function PythonEmulatorPage() {
             <span className="ml-3 font-mono text-[11.5px] text-[#77776f]">main.py</span>
           </div>
           <pre className="px-5 py-5 font-mono text-[13px] leading-[1.75] text-[#d4d4cf]">
-            <span className="text-[#6f86a8]">def</span> <span className="text-paper">greet</span>(name):{'\n'}
+            <span className="text-[#6f86a8]">def</span> <span className="text-on-night">greet</span>(name):{'\n'}
             {'    '}<span className="text-[#6f86a8]">return</span> <span className="text-[#c9b48a]">f"Hello, {'{'}name{'}'}!"</span>{'\n'}
             {'\n'}
             <span className="text-[#77776f]"># coming soon</span>{'\n'}

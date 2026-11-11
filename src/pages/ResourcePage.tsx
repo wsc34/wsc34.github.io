@@ -1,6 +1,6 @@
-import { ArrowRight, ExternalLink } from 'lucide-react'
-import { Link, useParams } from 'react-router'
-import { adjacentTopics, findTopic, levelLabels, topicHref } from '../content/curriculum'
+import { ExternalLink } from 'lucide-react'
+import { useParams } from 'react-router'
+import { findTopic, levelLabels } from '../content/curriculum'
 import { PlaceholderPage } from '../components/ui/PlaceholderPage'
 import { NotFoundPage } from './NotFoundPage'
 import { useDocumentTitle } from '../lib/useDocumentTitle'
@@ -18,7 +18,6 @@ export function ResourcePage() {
   const { board, group, topic } = found
   const levelInfo = levelLabels[board.level]
   const backTo = `${levelInfo.path}?open=${board.slug}`
-  const { prev, next } = adjacentTopics(board, topic.slug)
 
   return (
     <PlaceholderPage
@@ -41,33 +40,6 @@ export function ResourcePage() {
         )
       }
       back={{ label: `Back to ${board.board} ${board.code}`, to: backTo }}
-      aside={
-        <nav aria-label="Other topics" className="self-start rounded-lg border border-line bg-card p-6">
-          <p className="eyebrow">Continue browsing</p>
-          <ul className="mt-4 divide-y divide-line">
-            {[
-              prev && { label: 'Previous', t: prev },
-              next && { label: 'Next', t: next },
-            ]
-              .filter((x): x is { label: string; t: NonNullable<typeof prev> } => Boolean(x))
-              .map(({ label, t }) => (
-                <li key={label}>
-                  <Link to={topicHref(board, t)} className="group flex items-center justify-between gap-4 py-3.5">
-                    <span className="min-w-0">
-                      <span className="block font-mono text-[11.5px] text-faint">
-                        {label} · {t.number}
-                      </span>
-                      <span className="mt-0.5 block truncate text-[15px] font-medium text-ink group-hover:text-accent">
-                        {t.title}
-                      </span>
-                    </span>
-                    <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0 text-faint transition-transform group-hover:translate-x-0.5 group-hover:text-ink" />
-                  </Link>
-                </li>
-              ))}
-          </ul>
-        </nav>
-      }
     >
       {topic.documentUrl && (
         <a

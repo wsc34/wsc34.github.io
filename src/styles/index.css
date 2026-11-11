@@ -17,6 +17,11 @@
   --color-accent-strong: #2c4261;
   --color-accent-soft: #edf1f6;
   --color-night: #141414;
+  /* Edge of the dark "terminal" cards, and text that sits on them. */
+  --color-night-edge: #141414;
+  --color-on-night: #fafaf8;
+  /* Body text of articles. */
+  --color-prose: #262626;
 
   --font-sans: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
@@ -27,6 +32,53 @@
   --radius-lg: 10px;
 
   --ease-out-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* ------------------------------------------------------------------ */
+/*  Dark theme                                                         */
+/*  Follows the system setting unless the header toggle has chosen    */
+/*  one (stored as <html data-theme="light|dark">).                    */
+/* ------------------------------------------------------------------ */
+:root {
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) {
+    color-scheme: dark;
+    --color-paper: #141413;
+    --color-card: #1b1b1a;
+    --color-ink: #ededea;
+    --color-ink-soft: #c8c8c3;
+    --color-muted: #9b9b96;
+    --color-faint: #6e6e69;
+    --color-line: #2a2a28;
+    --color-line-strong: #3b3b38;
+    --color-wash: #1f1f1d;
+    --color-accent: #93abcf;
+    --color-accent-strong: #b6c8e3;
+    --color-accent-soft: #1f2a3a;
+    --color-night: #0c0c0b;
+    --color-night-edge: #2c2c2a;
+    --color-prose: #d9d9d4;
+  }
+}
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --color-paper: #141413;
+  --color-card: #1b1b1a;
+  --color-ink: #ededea;
+  --color-ink-soft: #c8c8c3;
+  --color-muted: #9b9b96;
+  --color-faint: #6e6e69;
+  --color-line: #2a2a28;
+  --color-line-strong: #3b3b38;
+  --color-wash: #1f1f1d;
+  --color-accent: #93abcf;
+  --color-accent-strong: #b6c8e3;
+  --color-accent-soft: #1f2a3a;
+  --color-night: #0c0c0b;
+  --color-night-edge: #2c2c2a;
+  --color-prose: #d9d9d4;
 }
 
 /* ------------------------------------------------------------------ */
@@ -144,7 +196,7 @@
   font-family: var(--font-serif);
   font-size: 1.1875rem;
   line-height: 1.7;
-  color: #262626;
+  color: var(--color-prose);
 }
 .prose-article > * + * {
   margin-top: 1.15em;
