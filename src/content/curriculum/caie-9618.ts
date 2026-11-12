@@ -33,12 +33,11 @@ export const caie9618: CurriculumBoard = {
         topic('10', 'Data types and structures'),
         topic('11', 'Programming'),
         topic('12', 'Software development'),
-        topic(
-          'Tool',
-          'Pseudocode',
-          'Write, check and run 9618 pseudocode in your browser, with a live Python translation. The IDE opens in a new tab.',
-          { documentUrl: '/caie_pseudocode/', documentLabel: 'Open the Pseudocode IDE' },
-        ),
+        topic('Tool', 'Pseudocode Compiler', undefined, {
+          summary: 'Write, check and run 9618 pseudocode in your browser, with a live Python translation.',
+          documentUrl: '/caie_pseudocode/',
+          documentLabel: 'Open the compiler',
+        }),
       ],
     },
     {

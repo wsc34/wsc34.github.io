@@ -72,6 +72,8 @@ export interface Topic {
    * the topic's resource page shows a button to open it.
    */
   documentUrl?: string
+  /** Text shown only on the topic's own page (not in the topic list). */
+  summary?: string
   /** Button text for `documentUrl`. Defaults to "Open resource". */
   documentLabel?: string
 }

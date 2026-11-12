@@ -31,7 +31,7 @@ export function ResourcePage() {
       status={topic.documentUrl ? undefined : 'Resource coming soon'}
       description={
         topic.documentUrl ? (
-          <p>{topic.description ?? 'Notes and materials for this topic.'}</p>
+          <p>{topic.summary ?? topic.description ?? 'Notes and materials for this topic.'}</p>
         ) : (
           <p>
             {topic.description && <span className="block text-ink-soft">{topic.description}.</span>}
@@ -46,7 +46,7 @@ export function ResourcePage() {
           href={topic.documentUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-8 inline-flex h-11 items-center gap-2 rounded-md bg-ink px-5 text-[14px] font-medium text-paper transition-colors hover:bg-accent-strong"
+          className="inline-flex h-11 items-center gap-2 rounded-md bg-ink px-5 text-[14px] font-medium text-paper transition-colors hover:bg-accent-strong"
         >
           {topic.documentLabel ?? 'Open resource'}
           <ExternalLink aria-hidden="true" className="h-4 w-4" />

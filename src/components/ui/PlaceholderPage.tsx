@@ -55,14 +55,17 @@ export function PlaceholderPage({ crumbs, eyebrow, title, description, status, b
             </p>
           )}
           <div className="mt-6 text-[16.5px] leading-relaxed text-muted">{description}</div>
-          {children}
-          <Link
-            to={back.to}
-            className="group mt-10 inline-flex h-11 items-center gap-2 rounded-md border border-line-strong bg-card px-4 text-[14px] font-medium text-ink transition-colors duration-150 hover:border-ink"
-          >
-            <ArrowLeft aria-hidden="true" className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-0.5" />
-            {back.label}
-          </Link>
+          {/* Actions: any page-specific button first, then the way back, on one aligned row. */}
+          <div className="mt-10 flex flex-wrap items-center gap-3">
+            {children}
+            <Link
+              to={back.to}
+              className="group inline-flex h-11 items-center gap-2 rounded-md border border-line-strong bg-card px-4 text-[14px] font-medium text-ink transition-colors duration-150 hover:border-ink"
+            >
+              <ArrowLeft aria-hidden="true" className="h-4 w-4 transition-transform duration-200 group-hover:-translate-x-0.5" />
+              {back.label}
+            </Link>
+          </div>
         </div>
         {aside}
       </div>
