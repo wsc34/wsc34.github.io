@@ -16,8 +16,8 @@ export const profile: Profile = {
   photo: '',
   photoAlt: 'Not done yet, meh',
   about: [
-    'Was trying to do more gaming but somehow ended up doing Computer Science.',
-    'Now trying to mock about with AI and build some CS material.',
+    'Was trying to do more Gaming but somehow ended up doing Computing.',
+    'Now trying to muck about with AI and build some CS material.',
   ],
 }
 
@@ -49,8 +49,8 @@ export const work: WorkEntry[] = [
 ]
 
 export const skills: SkillCategory[] = [
-  { name: 'Programming Languages', items: ['Python','C'] },
-  { name: 'Tools', items: ['AI?'] },
+  { name: 'Programming Languages', items: ['Python','Java','C++'] },
+  { name: 'Tools', items: ['Does AI count?'] },
   { name: 'Teaching & Professional', items: ['AQA 7517', 'CAIE 9618', 'Edexcel 1CP2'] },
   { name: 'Other', items: ['I will definitely find something to fill it in'] },
 ]
